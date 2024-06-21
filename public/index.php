@@ -2,20 +2,13 @@
 
 /*
 |--------------------------------------------------------------------------
-| Index
+| Index 
 |--------------------------------------------------------------------------
 |
-| Entry point fo the appliction
+| Responsible for initializing the App/Entry point fo the application
 |
 */
 
-/**
- * Class Example
- *
- * This is an example class to show the comment snippits
- *
- * @package Example
- * @author TC
- */
+include __DIR__ . "/../src/App/bootstrap.php";
 
-echo "Entry point of the frameowrk";
+$app->run();
