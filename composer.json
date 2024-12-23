@@ -1,0 +1,17 @@
+{
+  "name": "tarun/unnat",
+  "description": "A lightweight PHP Framework for simple apps.",
+  "autoload": {
+    "psr-4": {
+      "Framework\\": "src/Framework",
+      "App\\": "src/App"
+    }
+  },
+  "authors": [
+    {
+      "name": "coding.tarun",
+      "email": "coding.tarun@gmail.com"
+    }
+  ],
+  "require": {}
+}
