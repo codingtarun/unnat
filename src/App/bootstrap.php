@@ -21,10 +21,19 @@ declare(strict_types=1);
  * set up before handling any requests.
  */
 
+
+/**
+ * Autoload.php file contains the logic to automatically include the files based on the namespace and class name in the project. 
+ * 
+ * ex : Below we have used `use Framework\App;`, based on this statememnt autoloader automatically 
+ * include the file from the `src/Framework/App.php` file.
+ */
 require __DIR__ . '/../../vendor/autoload.php';
-//include __DIR__ . '/../Framework/App.php';
 
 use Framework\App;
 
 $app = new App();
+
+$app->add('/');
+
 return $app;
