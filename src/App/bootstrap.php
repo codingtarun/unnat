@@ -34,6 +34,6 @@ use Framework\App;
 
 $app = new App();
 
-$app->add('/');
+$app->get('/'); // Second argument is optional
 
 return $app;
