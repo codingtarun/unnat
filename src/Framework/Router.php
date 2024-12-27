@@ -8,11 +8,12 @@ class Router
 {
     private array $routes = [];
 
-    public function add(string $path, string $method,)
+    public function add(string $path, array $controller, string $method,)
     {
         $this->routes[] = [
             'path' => $this->normalizePath($path),
-            'method' => strtoupper($method)
+            'method' => strtoupper($method),
+            'controller' => $controller
         ];
     }
 
@@ -48,5 +49,19 @@ class Router
         $path = preg_replace('#[/]{2,}#', '/', $path);
 
         return $path;
+    }
+
+    public function dispatch(string $path, string $method)
+    {
+        $path = $this->normalizePath($path);
+        $method = strtoupper($method);
+        foreach ($this->routes as $route) {
+            if (!preg_match("#^{$route['path']}$#", $path) || $route['method'] !== $method) {
+                continue;
+            }
+            [$class, $function] = $route['controller'];
+            $controllerInstance = new $class;
+            $controllerInstance->$function();
+        }
     }
 }
