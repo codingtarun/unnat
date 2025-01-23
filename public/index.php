@@ -27,9 +27,10 @@ include __DIR__ . '/../src/App/functions.php';
  * ini_get(string $option) : A inbuild PHP function which allows user to get the current PHP configuations.
  *
  */
+
 // echo "MEMORY LIMIT : " . ini_get('memory_limit');
 
-ini_set('memory_limit', '512M');
+ini_set('memory_limit', '512M'); // Overriding the default setting
 
 $app = include __DIR__ . '/../src/App/bootstrap.php';
 
